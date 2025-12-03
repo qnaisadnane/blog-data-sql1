@@ -184,3 +184,16 @@ SELECT * FROM article WHERE date_creation > '2024-12-1';
 
 SELECT * from utilisateur order by datecreation desc;
 
+-- DISTINCT
+
+SELECT DISTINCT role from utilisateur;
+
+-- AND
+
+SELECT * FROM article WHERE id_categorie = 1 and (status = 'published' OR status='draft');
+
+-- BETWEEN
+
+SELECT * FROM commentaire WHERE date_creation BETWEEN '2024-12-1' AND '2024-12-15';
+
+SELECT * FROM Article WHERE id_categorie IN (SELECT id_categorie FROM Categorie WHERE  nom_categorie IN ('PHP', 'JavaScript', 'Base de données'));
